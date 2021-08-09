@@ -4,10 +4,10 @@ This is a custom E7-Auto-Shop-Refresh, the original is made by EmaOlay : https:/
 Sleep timers may also need to be adjusted as the speed that each PC can run E7 will differ
 PNG files may need to be updated as the pixels on each PC may differ
 
-#HOW TO RUN
+# HOW TO RUN
 To run the script, users need to have python. Python can be obtained from the Microsoft Store. Please make sure that Python3 is downloaded
 
-##packages to install with pip
+## packages to install with pip
 Run the commands below to acquire all required packages for script:
 pip install pillow
 pip install pywin32
@@ -18,6 +18,6 @@ pip install opencv-python
 If users have python and all the required packages, they can run this command to start the script:
 "python AutoRefresh.py"
 
-##Stopping the Script
+## Stopping the Script
 HOLD 'q' to stop macro while running. The script will not stop immediately, but will stop if 'q' is being held at one of the three checkpoints in the script. 
 
