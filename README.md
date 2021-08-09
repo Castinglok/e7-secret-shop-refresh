@@ -3,3 +3,6 @@ This is a custom E7-Auto-Shop-Refresh, the original is made by EmaOlay : https:/
 
 Sleep timers may also need to be adjusted as the speed that each PC can run E7 will differ
 PNG files may need to be updated as the pixels on each PC may differ
+
+File to be run is "AutoRefresh.py"
+Hold 'q' to stop macro while running
