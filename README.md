@@ -2,12 +2,14 @@
 This is a custom E7-Auto-Shop-Refresh, the original is made by EmaOlay : https://github.com/EmaOlay/E7-Auto-Shop-Refresh
 
 Sleep timers may also need to be adjusted as the speed that each PC can run E7 will differ
+
 PNG files may need to be updated as the pixels on each PC may differ
 
 # HOW TO RUN
 To run the script, users need to have python. Python can be obtained from the Microsoft Store. Please make sure that Python3 is downloaded
 
 If users have python and all the required packages, they can run this command to start the script:
+
 "python AutoRefresh.py"
 
 ## packages to install with pip
