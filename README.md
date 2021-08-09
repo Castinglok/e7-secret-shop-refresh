@@ -12,10 +12,15 @@ If users have python and all the required packages, they can run this command to
 
 ## packages to install with pip
 Run the commands below to acquire all required packages for script:
+
 pip install pillow
+
 pip install pywin32
+
 pip install pyautogui
+
 pip install keyboard
+
 pip install opencv-python
 
 ## Stopping the Script
