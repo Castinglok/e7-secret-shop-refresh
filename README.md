@@ -6,3 +6,10 @@ PNG files may need to be updated as the pixels on each PC may differ
 
 File to be run is "AutoRefresh.py"
 Hold 'q' to stop macro while running
+
+packages to install with pip
+pip install pillow
+pip install pywin32
+pip install pyautogui
+pip install keyboard
+pip install opencv-python

@@ -35,7 +35,7 @@ def writeLog(totalStats):
         file.write(totalStats[2:])
     except:
         print("File already exists, appending to file instead")
-        file = open("temp.log", "a")
+        file = open("logs/temp.log", "a")
         file.write(totalStats)
     finally:
         file.close()
