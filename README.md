@@ -12,18 +12,11 @@ If users have python and all the required packages, they can run this command to
 
 "python AutoRefresh.py"
 
-## packages to install with pip
-Run the commands below to acquire all required packages for script:
+## Installing Required Packages with pip
+The list of required packages is in the "package.txt" file.
+To install all the required packages, run the command below:
 
-pip install pillow
-
-pip install pywin32
-
-pip install pyautogui
-
-pip install keyboard
-
-pip install opencv-python
+"pip install -r packages.txt"
 
 ## Stopping the Script
 HOLD 'q' to stop macro while running. The script will not stop immediately, but will stop if 'q' is being held at one of the three checkpoints in the script. 
