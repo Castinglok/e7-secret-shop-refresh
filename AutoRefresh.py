@@ -34,6 +34,7 @@ def printStats():
     writeLog(totalStats)
     print(totalStats[1:])
 
+#first click to minimize ide
 click(1810,14)
 
 #pyautogui.scroll(amount_to_scroll, x=moveToX, y=moveToY)
@@ -58,6 +59,7 @@ while keyboard.is_pressed('q') == False:
             click(Coven_point[0]+800, Coven_point[1]+50)
         except:
             printStats()
+            updateTotals()
         time.sleep(0.5)#wait for confirm button
         Buy_button_Covenant_pos=pyautogui.locateOnScreen('pictures/Buy_button_Covenant.png')
         Buy_button_Covenant_point=pyautogui.center(Buy_button_Covenant_pos)
@@ -78,6 +80,7 @@ while keyboard.is_pressed('q') == False:
             click(Mystic_point[0]+800, Mystic_point[1]+50)
         except:
             printStats()
+            updateTotals()
         time.sleep(0.5)#wait for confirm button
         Buy_button_Mystic_pos=pyautogui.locateOnScreen('pictures/Buy_button_Mystic.png')
         Buy_button_Mystic_point=pyautogui.center(Buy_button_Mystic_pos)
@@ -109,6 +112,7 @@ while keyboard.is_pressed('q') == False:
             click(Coven_point[0]+800, Coven_point[1]+50)
         except:
             printStats()
+            updateTotals()
         time.sleep(0.5)#wait for confirm button
         Buy_button_Covenant_pos=pyautogui.locateOnScreen('pictures/Buy_button_Covenant.png')
         Buy_button_Covenant_point=pyautogui.center(Buy_button_Covenant_pos)
@@ -129,6 +133,7 @@ while keyboard.is_pressed('q') == False:
             click(Mystic_point[0]+800, Mystic_point[1]+50)
         except:
             printStats()
+            updateTotals()
         time.sleep(0.5)#wait for confirm button
         Buy_button_Mystic_pos=pyautogui.locateOnScreen('pictures/Buy_button_Mystic.png')
         Buy_button_Mystic_point=pyautogui.center(Buy_button_Mystic_pos)
@@ -154,9 +159,10 @@ while keyboard.is_pressed('q') == False:
         Confirm_point=pyautogui.center(Confirm_pos)
         click(Confirm_point[0], Confirm_point[1])
         click(Confirm_point[0], Confirm_point[1])
+        SSCounter += 3
     except:
         printStats()
-    SSCounter += 3
+        updateTotals()
     time.sleep(0.5)
 
 #print stats at end

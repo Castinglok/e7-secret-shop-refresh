@@ -12,6 +12,10 @@ If users have python and all the required packages, they can run this command to
 
 "python AutoRefresh.py"
 
+Please have E7 maximized and then also have whatever will be running the script also maximized in front of it. There is an initial click to minimize whatever is in front of E7
+
+PLEASE NOTE: if running a multi-monitor setup, E7 should be on the main monitor.
+
 ## Installing Required Packages with pip
 The list of required packages is in the "package.txt" file.
 To install all the required packages, run the command below:
