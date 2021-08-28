@@ -14,10 +14,14 @@ cov_Counter = 0
 mystic_Counter = 0
 SSCounter = 0
 
+#sleep timers
+SleepTime = 0.5
+
+
 def click(x,y):
     win32api.SetCursorPos((x,y))
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
-    time.sleep(0.4)
+    time.sleep(SleepTime)
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
 
 def printStats():
@@ -48,10 +52,10 @@ while keyboard.is_pressed('q') == False:
 #The confidence is added due to little variations in the background
     Coven_pos=pyautogui.locateOnScreen('pictures/covenant.png',confidence=0.95)
     Mystic_pos=pyautogui.locateOnScreen('pictures/mystic.png',confidence=0.95)
-    time.sleep(0.5)
+    time.sleep(SleepTime)
 #Checks for covenant
     if (Coven_pos) != None:
-        time.sleep(0.5)
+        time.sleep(SleepTime)
         print("Buy Covenant Summons.")
         try:
             Coven_point=pyautogui.center(Coven_pos)
@@ -60,19 +64,19 @@ while keyboard.is_pressed('q') == False:
         except:
             printStats()
             updateTotals()
-        time.sleep(0.5)#wait for confirm button
+        time.sleep(SleepTime)#wait for confirm button
         Buy_button_Covenant_pos=pyautogui.locateOnScreen('pictures/Buy_button_Covenant.png')
         Buy_button_Covenant_point=pyautogui.center(Buy_button_Covenant_pos)
         click(Buy_button_Covenant_point[0], Buy_button_Covenant_point[1])
         click(Buy_button_Covenant_point[0], Buy_button_Covenant_point[1])
         cov_Counter += 5
-        time.sleep(0.5)
+        time.sleep(SleepTime)
     else:
         print("No Covenant summons to buy.")       
 
 #checks for mystic
     if (Mystic_pos) != None:
-        time.sleep(0.5)        
+        time.sleep(SleepTime)        
         print("Buy Mystic Summons.")
         try:
             Mystic_point=pyautogui.center(Mystic_pos)
@@ -81,15 +85,15 @@ while keyboard.is_pressed('q') == False:
         except:
             printStats()
             updateTotals()
-        time.sleep(0.5)#wait for confirm button
+        time.sleep(SleepTime)#wait for confirm button
         Buy_button_Mystic_pos=pyautogui.locateOnScreen('pictures/Buy_button_Mystic.png')
         Buy_button_Mystic_point=pyautogui.center(Buy_button_Mystic_pos)
         click(Buy_button_Mystic_point[0], Buy_button_Mystic_point[1])
         click(Buy_button_Mystic_point[0], Buy_button_Mystic_point[1])
         mystic_Counter += 50
-        time.sleep(0.5)
+        time.sleep(SleepTime)
     else:
-        time.sleep(0.5)
+        time.sleep(SleepTime)
         print("No Mystic summons to buy.")
         click(x=1263,y=590)
     
@@ -104,7 +108,7 @@ while keyboard.is_pressed('q') == False:
 
 #Checks for covenant
     if (Coven_pos2) != None:
-        time.sleep(0.5)
+        time.sleep(SleepTime)
         print("Buy Covenant Summons.")
         try:
             Coven_point=pyautogui.center(Coven_pos2)
@@ -113,19 +117,19 @@ while keyboard.is_pressed('q') == False:
         except:
             printStats()
             updateTotals()
-        time.sleep(0.5)#wait for confirm button
+        time.sleep(SleepTime)#wait for confirm button
         Buy_button_Covenant_pos=pyautogui.locateOnScreen('pictures/Buy_button_Covenant.png')
         Buy_button_Covenant_point=pyautogui.center(Buy_button_Covenant_pos)
         click(Buy_button_Covenant_point[0], Buy_button_Covenant_point[1])
         click(Buy_button_Covenant_point[0], Buy_button_Covenant_point[1])
         cov_Counter += 5
-        time.sleep(0.5)
+        time.sleep(SleepTime)
     else:
         print("No Covenant summons to buy.")
         
 #checks for mystic
     if (Mystic_pos2) != None:
-        time.sleep(0.5)        
+        time.sleep(SleepTime)        
         print("Buy Mystic Summons.")
         try:
             Mystic_point=pyautogui.center(Mystic_pos2)
@@ -134,13 +138,13 @@ while keyboard.is_pressed('q') == False:
         except:
             printStats()
             updateTotals()
-        time.sleep(0.5)#wait for confirm button
+        time.sleep(SleepTime)#wait for confirm button
         Buy_button_Mystic_pos=pyautogui.locateOnScreen('pictures/Buy_button_Mystic.png')
         Buy_button_Mystic_point=pyautogui.center(Buy_button_Mystic_pos)
         click(Buy_button_Mystic_point[0], Buy_button_Mystic_point[1])
         click(Buy_button_Mystic_point[0], Buy_button_Mystic_point[1])
         mystic_Counter += 50
-        time.sleep(0.5)
+        time.sleep(SleepTime)
     else:
         print("No Mystic summons to buy.")
         click(x=1263,y=590)
@@ -153,7 +157,7 @@ while keyboard.is_pressed('q') == False:
     RB_point=pyautogui.center(RB_pos)
     click(RB_point[0], RB_point[1])
     click(RB_point[0], RB_point[1])
-    time.sleep(0.5)#wait for confirm to appear
+    time.sleep(SleepTime)#wait for confirm to appear
     Confirm_pos=pyautogui.locateOnScreen('pictures/confirm button.png')
     try:
         Confirm_point=pyautogui.center(Confirm_pos)
@@ -163,7 +167,7 @@ while keyboard.is_pressed('q') == False:
     except:
         printStats()
         updateTotals()
-    time.sleep(0.5)
+    time.sleep(SleepTime)
 
 #print stats at end
 printStats()
