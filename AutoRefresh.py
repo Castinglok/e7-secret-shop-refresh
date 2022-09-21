@@ -1,10 +1,13 @@
 from writers.logWriter import *
-from pyautogui import *
 import pyautogui
 import time
 import datetime
 import keyboard
-import win32api, win32con
+
+import sys
+sys.path.append('../util')
+
+from utils import click, findAndClick
 
 #starting time
 startDT = datetime.datetime.now()
@@ -15,14 +18,7 @@ mystic_Counter = 0
 SSCounter = 0
 
 #sleep timers
-SleepTime = 0.5
-
-
-def click(x,y):
-    win32api.SetCursorPos((x,y))
-    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
-    time.sleep(SleepTime)
-    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+SleepTime = .2
 
 def printStats():
     currDT = datetime.datetime.now()
@@ -48,7 +44,7 @@ click(1810,14)
 
 while keyboard.is_pressed('q') == False:
     
-    RB_pos=pyautogui.locateOnScreen('pictures/refresh_button.png')
+    RB_pos=pyautogui.locateOnScreen('pictures/refresh_button.png', confidence=0.95)
 #The confidence is added due to little variations in the background
     Coven_pos=pyautogui.locateOnScreen('pictures/covenant.png',confidence=0.95)
     Mystic_pos=pyautogui.locateOnScreen('pictures/mystic.png',confidence=0.95)
@@ -66,9 +62,8 @@ while keyboard.is_pressed('q') == False:
             updateTotals()
         time.sleep(SleepTime)#wait for confirm button
         Buy_button_Covenant_pos=pyautogui.locateOnScreen('pictures/Buy_button_Covenant.png')
-        Buy_button_Covenant_point=pyautogui.center(Buy_button_Covenant_pos)
-        click(Buy_button_Covenant_point[0], Buy_button_Covenant_point[1])
-        click(Buy_button_Covenant_point[0], Buy_button_Covenant_point[1])
+        findAndClick('pictures/Buy_button_Covenant.png', SleepTime, .9)
+        findAndClick('pictures/Buy_button_Covenant.png', SleepTime, .9)
         cov_Counter += 5
         time.sleep(SleepTime)
     else:
@@ -87,9 +82,8 @@ while keyboard.is_pressed('q') == False:
             updateTotals()
         time.sleep(SleepTime)#wait for confirm button
         Buy_button_Mystic_pos=pyautogui.locateOnScreen('pictures/Buy_button_Mystic.png')
-        Buy_button_Mystic_point=pyautogui.center(Buy_button_Mystic_pos)
-        click(Buy_button_Mystic_point[0], Buy_button_Mystic_point[1])
-        click(Buy_button_Mystic_point[0], Buy_button_Mystic_point[1])
+        findAndClick('pictures/Buy_button_Mystic.png', SleepTime, .9)
+        findAndClick('pictures/Buy_button_Mystic.png', SleepTime, .9)
         mystic_Counter += 50
         time.sleep(SleepTime)
     else:
@@ -98,7 +92,7 @@ while keyboard.is_pressed('q') == False:
         click(x=1263,y=590)
     
     pyautogui.scroll(-5, x=1263, y=590)
-    time.sleep(1)
+    time.sleep(1.5)
     Coven_pos2=pyautogui.locateOnScreen('pictures/covenant.png',confidence=0.95)
     Mystic_pos2=pyautogui.locateOnScreen('pictures/mystic.png',confidence=0.95)
 	
@@ -119,9 +113,8 @@ while keyboard.is_pressed('q') == False:
             updateTotals()
         time.sleep(SleepTime)#wait for confirm button
         Buy_button_Covenant_pos=pyautogui.locateOnScreen('pictures/Buy_button_Covenant.png')
-        Buy_button_Covenant_point=pyautogui.center(Buy_button_Covenant_pos)
-        click(Buy_button_Covenant_point[0], Buy_button_Covenant_point[1])
-        click(Buy_button_Covenant_point[0], Buy_button_Covenant_point[1])
+        findAndClick('pictures/Buy_button_Covenant.png', SleepTime, .9)
+        findAndClick('pictures/Buy_button_Covenant.png', SleepTime, .9)
         cov_Counter += 5
         time.sleep(SleepTime)
     else:
@@ -140,9 +133,8 @@ while keyboard.is_pressed('q') == False:
             updateTotals()
         time.sleep(SleepTime)#wait for confirm button
         Buy_button_Mystic_pos=pyautogui.locateOnScreen('pictures/Buy_button_Mystic.png')
-        Buy_button_Mystic_point=pyautogui.center(Buy_button_Mystic_pos)
-        click(Buy_button_Mystic_point[0], Buy_button_Mystic_point[1])
-        click(Buy_button_Mystic_point[0], Buy_button_Mystic_point[1])
+        findAndClick('pictures/Buy_button_Mystic.png', SleepTime, .9)
+        findAndClick('pictures/Buy_button_Mystic.png', SleepTime, .9)
         mystic_Counter += 50
         time.sleep(SleepTime)
     else:
@@ -160,9 +152,11 @@ while keyboard.is_pressed('q') == False:
     time.sleep(SleepTime)#wait for confirm to appear
     Confirm_pos=pyautogui.locateOnScreen('pictures/confirm button.png')
     try:
-        Confirm_point=pyautogui.center(Confirm_pos)
-        click(Confirm_point[0], Confirm_point[1])
-        click(Confirm_point[0], Confirm_point[1])
+        # Confirm_point=pyautogui.center(Confirm_pos)
+        # click(Confirm_point[0], Confirm_point[1])
+        # click(Confirm_point[0], Confirm_point[1])
+        findAndClick('pictures/confirm button.png', SleepTime, .9)
+        findAndClick('pictures/confirm button.png', SleepTime, .9)
         SSCounter += 3
     except:
         printStats()
