@@ -4,9 +4,6 @@ import time
 import datetime
 import keyboard
 
-import sys
-sys.path.append('../util')
-
 from utils import click, findAndClick
 
 #starting time
